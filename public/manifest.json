@@ -1,0 +1,17 @@
+{
+  "name": "Zona Celular",
+  "short_name": "Zona Celular",
+  "description": "Sistema de gestión de Zona Celular",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icono.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
