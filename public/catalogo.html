@@ -89,7 +89,7 @@
 
             <!-- TELÉFONO 1 -->
 
-            <div class="producto">
+            <div class="producto" data-name="Itel A50CS" data-price="C$ 4,500" data-description="Smartphone práctico con buen rendimiento para uso diario." data-image="images/itel A50CS.jpeg" data-specs="64 GB de almacenamiento|Pantalla HD|Cámara trasera de 13 MP|Batería de 4000 mAh">
 
                 <div class="producto-imagen">
                     <img src="images/itel A50CS.jpeg" alt="Itel A50CS" />
@@ -107,7 +107,7 @@
                     C$ 4,500
                 </div>
 
-                <button class="btn-producto">
+                <button class="btn-producto" data-action="open-modal">
                     VER PRODUCTO
                 </button>
 
@@ -116,7 +116,7 @@
 
             <!-- TELÉFONO 2 -->
 
-            <div class="producto">
+            <div class="producto" data-name="Itel A100C" data-price="C$ 3,200" data-description="Modelo económico y funcional para llamadas, mensajes y apps básicas." data-image="images/itel A100C.jpeg" data-specs="32 GB de almacenamiento|Pantalla de 6.6"|Cámara trasera de 8 MP|Batería larga duración">
 
                 <div class="producto-imagen">
                     <img src="images/itel A100C.jpeg" alt="Itel A100C" />
@@ -134,7 +134,7 @@
                     C$ 3,200
                 </div>
 
-                <button class="btn-producto">
+                <button class="btn-producto" data-action="open-modal">
                     VER PRODUCTO
                 </button>
 
@@ -143,7 +143,7 @@
 
             <!-- TELÉFONO 3 -->
 
-            <div class="producto">
+            <div class="producto" data-name="iPhone 13" data-price="C$ 18,500" data-description="iPhone con excelente cámara y rendimiento premium." data-image="" data-specs="128 GB de almacenamiento|Pantalla OLED|Cámara dual de 12 MP|Chip A15 Bionic">
 
                 <div class="producto-imagen">
                     📱
@@ -161,7 +161,7 @@
                     C$ 18,500
                 </div>
 
-                <button class="btn-producto">
+                <button class="btn-producto" data-action="open-modal">
                     VER PRODUCTO
                 </button>
 
@@ -170,7 +170,7 @@
 
             <!-- TELÉFONO 4 -->
 
-            <div class="producto">
+            <div class="producto" data-name="Redmi 15" data-price="C$ 9,500" data-description="Smartphone moderno con diseño elegante y excelente cámara." data-image="images/REDMI 15.jpeg" data-specs="256 GB de almacenamiento|Pantalla Full HD+|Cámara triple|Batería de 5000 mAh">
 
                 <div class="producto-imagen">
                     <img src="images/REDMI 15.jpeg" alt="Redmi 15" />
@@ -188,7 +188,7 @@
                     C$ 9,500
                 </div>
 
-                <button class="btn-producto">
+                <button class="btn-producto" data-action="open-modal">
                     VER PRODUCTO
                 </button>
 
@@ -196,7 +196,7 @@
 
             <!-- TABLET BLUU -->
 
-            <div class="producto">
+            <div class="producto" data-name="Tablet BLUU" data-price="C$ 6,500" data-description="Tablet ideal para entretenimiento, estudio y uso multimedia." data-image="images/Tablet BLUU.jpeg" data-specs="128 GB de almacenamiento|Pantalla amplia|Procesador eficiente|Batería de larga duración">
 
                 <div class="producto-imagen">
                     <img src="images/Tablet BLUU.jpeg" alt="Tablet BLUU" />
@@ -214,7 +214,7 @@
                     C$ 6,500
                 </div>
 
-                <button class="btn-producto">
+                <button class="btn-producto" data-action="open-modal">
                     VER PRODUCTO
                 </button>
 
@@ -222,6 +222,19 @@
 
 
         </section>
+
+        <div id="productModal" class="product-modal hidden">
+            <div class="product-modal-content">
+                <button class="modal-close" id="closeModal">×</button>
+                <div class="modal-image" id="modalImage"></div>
+                <div class="modal-info">
+                    <h3 id="modalTitle">Producto</h3>
+                    <p id="modalPrice" class="modal-price"></p>
+                    <p id="modalDescription"></p>
+                    <ul id="modalSpecs"></ul>
+                </div>
+            </div>
+        </div>
 
 
         <!-- BOTÓN CERRAR SESIÓN -->
@@ -256,10 +269,56 @@
 <script>
 
 function cerrarSesion() {
-
     window.location.href = "index.html";
-
 }
+
+const modal = document.getElementById("productModal");
+const closeModal = document.getElementById("closeModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalPrice = document.getElementById("modalPrice");
+const modalDescription = document.getElementById("modalDescription");
+const modalSpecs = document.getElementById("modalSpecs");
+
+function openModal(product) {
+    modalImage.innerHTML = product.dataset.image
+        ? `<img src="${product.dataset.image}" alt="${product.dataset.name}">`
+        : "📱";
+
+    modalTitle.textContent = product.dataset.name || "Producto";
+    modalPrice.textContent = product.dataset.price || "";
+    modalDescription.textContent = product.dataset.description || "";
+
+    modalSpecs.innerHTML = "";
+    const specs = (product.dataset.specs || "").split("|");
+    specs.forEach((spec) => {
+        if (spec.trim()) {
+            const li = document.createElement("li");
+            li.textContent = spec.trim();
+            modalSpecs.appendChild(li);
+        }
+    });
+
+    modal.classList.remove("hidden");
+}
+
+function closeProductModal() {
+    modal.classList.add("hidden");
+}
+
+document.querySelectorAll(".producto").forEach((producto) => {
+    const button = producto.querySelector("[data-action='open-modal']");
+    if (button) {
+        button.addEventListener("click", () => openModal(producto));
+    }
+});
+
+closeModal.addEventListener("click", closeProductModal);
+modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        closeProductModal();
+    }
+});
 
 </script>
 
