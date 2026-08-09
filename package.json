@@ -1,0 +1,13 @@
+{
+  "name": "app-zona-celular",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de Zona Celular",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

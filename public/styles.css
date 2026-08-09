@@ -1,0 +1,905 @@
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #dceeff;
+    color: #11145f;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   FONDO
+================================ */
+
+.pagina {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255,255,255,0.95) 0,
+            rgba(255,255,255,0.75) 30%,
+            transparent 55%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #eaf6ff 45%,
+            #cde6fa 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   ENCABEZADO
+================================ */
+
+.encabezado {
+    text-align: center;
+    padding: 35px 20px 20px;
+}
+
+.bienvenida {
+    font-size: clamp(28px, 5vw, 55px);
+    font-weight: 900;
+    color: #050505;
+    letter-spacing: 1px;
+}
+
+.nombre-negocio {
+    font-size: clamp(28px, 5vw, 58px);
+    font-weight: 900;
+    color: #11145f;
+    margin-top: 5px;
+}
+
+.nombre-negocio span {
+    color: #d71920;
+}
+
+
+/* ================================
+   CONTENIDO
+================================ */
+
+.contenido {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    padding: 30px;
+}
+
+
+/* ================================
+   PRESENTACIÓN
+================================ */
+
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+    text-align: center;
+}
+
+.logo-circulo {
+    position: relative;
+
+    width: 260px;
+    height: 260px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zc {
+    font-size: 80px;
+    font-weight: 900;
+    color: #d71920;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ondas del logo */
+
+.onda {
+    position: absolute;
+
+    border: 18px solid #11145f;
+
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+
+    border-radius: 50%;
+
+    transform: rotate(-45deg);
+}
+
+.onda1 {
+    width: 220px;
+    height: 220px;
+}
+
+.onda2 {
+    width: 165px;
+    height: 165px;
+}
+
+.onda3 {
+    width: 110px;
+    height: 110px;
+}
+
+
+.logo h1 {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -5px;
+}
+
+.logo h1 span {
+    font-size: 55px;
+    color: #11145f;
+}
+
+.logo h1 strong {
+    font-size: 62px;
+    color: #d71920;
+}
+
+.logo h1 small {
+    font-size: 45px;
+    color: #11145f;
+}
+
+
+/* ================================
+   HORARIO
+================================ */
+
+.horario {
+    background: white;
+
+    border: 4px solid #11145f;
+    border-radius: 18px;
+
+    padding: 15px 30px;
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.horario h2 {
+    font-size: 20px;
+    color: #11145f;
+}
+
+.domingo {
+    margin-top: 10px;
+}
+
+.domingo span {
+    display: block;
+
+    color: #d71920;
+
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.domingo strong {
+    font-size: 22px;
+    color: #111;
+}
+
+
+/* ================================
+   SERVICIOS
+================================ */
+
+.servicios {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    text-align: center;
+}
+
+.servicio {
+    color: #11145f;
+
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.icono {
+    font-size: 38px;
+}
+
+.servicio span {
+    font-size: 14px;
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+.login {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+
+    width: 100%;
+    max-width: 500px;
+
+    background: rgba(255,255,255,0.95);
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    border: 4px solid #11145f;
+
+    box-shadow:
+        0 12px 35px rgba(17,20,95,0.25);
+}
+
+.login-card h2 {
+    text-align: center;
+
+    color: #11145f;
+
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    text-align: center;
+
+    color: #444;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   FORMULARIO
+================================ */
+
+form label {
+    display: block;
+
+    font-weight: bold;
+
+    color: #11145f;
+
+    margin-bottom: 7px;
+}
+
+form > label {
+    margin-top: 18px;
+}
+
+input[type="text"],
+input[type="password"] {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: 2px solid #b8c4d8;
+
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus {
+
+    border-color: #d71920;
+
+    box-shadow:
+        0 0 0 3px rgba(215,25,32,0.12);
+}
+
+
+/* ================================
+   CONTRASEÑA
+================================ */
+
+.password-box {
+
+    position: relative;
+
+    display: flex;
+}
+
+.password-box input {
+    padding-right: 55px;
+}
+
+.password-box button {
+
+    position: absolute;
+
+    right: 5px;
+    top: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+
+/* ================================
+   OPCIONES
+================================ */
+
+.opciones {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.recordar {
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 0 !important;
+
+    font-weight: normal !important;
+
+    color: #333 !important;
+}
+
+.recordar input {
+    width: 18px;
+    height: 18px;
+}
+
+.opciones a {
+
+    color: #11145f;
+
+    font-weight: bold;
+
+    text-decoration: underline;
+}
+
+.opciones a:hover {
+    color: #d71920;
+}
+
+
+/* ================================
+   BOTÓN
+================================ */
+
+.btn-login {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #d71920;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+
+    background: #11145f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(17,20,95,0.25);
+}
+
+
+/* ================================
+   MENSAJES
+================================ */
+
+.mensaje {
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+.mensaje.error {
+    color: #d71920;
+}
+
+.mensaje.correcto {
+    color: #16803c;
+}
+
+
+/* ================================
+   CONTACTO
+================================ */
+
+.contacto {
+
+    max-width: 1100px;
+
+    margin: 20px auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    padding: 30px;
+
+    border-top: 2px solid #11145f;
+}
+
+.contacto h2 {
+
+    color: #11145f;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.contacto p {
+
+    font-size: 22px;
+
+    margin: 10px 0;
+
+    color: #222;
+}
+
+.encuentranos strong {
+    color: #11145f;
+}
+
+.atencion {
+    margin-top: 20px !important;
+
+    font-size: 18px !important;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    background: #11145f;
+
+    color: white;
+
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 850px) {
+
+    .contenido {
+
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+    .presentacion {
+        order: 1;
+    }
+
+    .login {
+        order: 2;
+    }
+
+    .servicios {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contacto {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 25px;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .encabezado {
+        padding: 25px 10px;
+    }
+
+    .logo-circulo {
+
+        width: 200px;
+        height: 200px;
+    }
+
+    .onda1 {
+        width: 175px;
+        height: 175px;
+    }
+
+    .onda2 {
+        width: 130px;
+        height: 130px;
+    }
+
+    .onda3 {
+        width: 90px;
+        height: 90px;
+    }
+
+    .zc {
+        font-size: 60px;
+    }
+
+    .logo h1 span {
+        font-size: 40px;
+    }
+
+    .logo h1 strong {
+        font-size: 45px;
+    }
+
+    .logo h1 small {
+        font-size: 32px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+    }
+
+    .opciones {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .servicio span {
+        font-size: 12px;
+    }
+
+}
+
+/* ================================
+   CATÁLOGO
+================================ */
+
+.catalogo {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px;
+}
+
+
+.catalogo-titulo {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.catalogo-titulo h1 {
+
+    color: #11145f;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+.catalogo-titulo p {
+
+    color: #555;
+
+    font-size: 18px;
+}
+
+
+/* PRODUCTOS */
+
+.productos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.producto {
+
+    background: white;
+
+    border: 3px solid #11145f;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px
+        rgba(17, 20, 95, 0.15);
+
+    transition: 0.3s;
+}
+
+
+.producto:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(17, 20, 95, 0.25);
+
+}
+
+
+.producto-imagen {
+
+    height: 180px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #eef7ff;
+
+    border-radius: 15px;
+
+    font-size: 100px;
+
+    margin-bottom: 15px;
+}
+
+
+.producto h2 {
+
+    color: #11145f;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.producto p {
+
+    color: #666;
+
+    min-height: 40px;
+}
+
+
+.precio {
+
+    color: #d71920;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    margin: 15px 0;
+}
+
+
+.btn-producto {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #d71920;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.btn-producto:hover {
+
+    background: #11145f;
+}
+
+
+/* CERRAR SESIÓN */
+
+.cerrar {
+
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+
+.cerrar button {
+
+    padding: 12px 25px;
+
+    border: 2px solid #11145f;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #11145f;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.cerrar button:hover {
+
+    background: #11145f;
+
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .productos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .productos {
+
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo-titulo h1 {
+
+        font-size: 30px;
+    }
+
+}
